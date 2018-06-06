@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.loading {
+  z-index: 9999;
+  opacity: 0.2;
+  background: #000;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%; }
+  .loading .loading-inner {
+    width: 200px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    margin: auto;
+    height: 52px; }
+    .loading .loading-inner .loading-text {
+      width: 100%;
+      text-align: center;
+      height: 20px;
+      line-height: 20px;
+      font-size: 12px;
+      font-family: "瀹嬩綋"; }
+    .loading .loading-inner img {
+      margin: 0 auto;
+      width: 32px;
+      height: 32px;
+      display: block; }
