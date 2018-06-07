@@ -41,7 +41,7 @@
           data: params,
           success: function (res) {
             console.log(res)
-            $vm.model = res;
+            $vm.model = res.data;
           },
           error: function (error) {
             console.log(error)
