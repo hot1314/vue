@@ -1,8 +1,8 @@
 # vue_project
 
-    > A Vue.js project
+    A Vue.js project
 
-    > 基于vue-cli的基础框架
+    基于vue-cli的基础框架
 
 ## 包含以下几个内容
 
