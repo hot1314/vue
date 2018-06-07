@@ -27,7 +27,7 @@ var httpHelper = {
         if (requestType == "post") {
             vueComponent.$http.post(httpUrl, params, options).then(function (res) {
                 var result = res.body;
-                if (result.code == 1) {  //code等于1
+                if (result.code == 1) {
                     if (successCallback) {
                         successCallback(result);
                     }
@@ -45,7 +45,7 @@ var httpHelper = {
         } else {
             vueComponent.$http.get(httpUrl, {params: params}, options).then(function (res) {
                 var result = res.body;
-                if (result.code == 1) {  //code等于1
+                if (result.code == 1) {
                     if (successCallback) {
                         successCallback(result);
                     }
