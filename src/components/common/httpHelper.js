@@ -35,7 +35,7 @@ var httpHelper = {
         }
       })
     }else{
-      vueComponent.$http.get(httpUrl, params,options).then(function (res) {
+      vueComponent.$http.get(httpUrl, { params: params } ,options).then(function (res) {
         if (successCallback) {
           successCallback(res.body.data)
         }
