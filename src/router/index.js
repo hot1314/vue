@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource  from 'vue-resource'
-import module1 from './../components/module1'
-import module2 from './../components/module2'
+import login from './../components/login'
+import home from './../components/home'
 import newPage from './../components/newPage'
 
 Vue.use(VueResource)
@@ -13,18 +13,16 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      component:module1
+      component:login
+    },
+    {
+      path: '/home',
+      component:home
     },
     {
       path: '/page',
-      component:module2
-    },
-    {
-      path: '/new_page',
       name:"default",
       component:newPage
     },
-
-
   ]
 })

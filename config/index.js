@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://www.ailaidian.cn/appapi.php',
+        target: 'http://dianbang.ailaidian.cn/public/index.php',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

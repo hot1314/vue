@@ -27,7 +27,7 @@ var httpHelper = {
         if (requestType == "post") {
             vueComponent.$http.post(httpUrl, params, options).then(function (res) {
                 var result = res.body;
-                if (result.code == 1) {
+                if (result.status == 1) {
                     if (successCallback) {
                         successCallback(result);
                     }
@@ -38,14 +38,14 @@ var httpHelper = {
                 }
             }, function (err) {
                 if (errCallback) {
-                    var re = {code: "httpError", message: "网络不给力，请稍后"};
+                    var re = {status: "httpError", msg: "网络不给力，请稍后"};
                     errCallback(re);
                 }
             });
         } else {
             vueComponent.$http.get(httpUrl, {params: params}, options).then(function (res) {
                 var result = res.body;
-                if (result.code == 1) {
+                if (result.status == 1) {
                     if (successCallback) {
                         successCallback(result);
                     }
@@ -56,7 +56,7 @@ var httpHelper = {
                 }
             }, function (err) {
                 if (errCallback) {
-                    var re = {code: "httpError", message: "网络不给力，请稍后"};
+                    var re = {status: "httpError", msg: "网络不给力，请稍后"};
                     errCallback(re);
                 }
             });

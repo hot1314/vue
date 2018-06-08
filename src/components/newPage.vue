@@ -1,6 +1,7 @@
 <template>
   <div class="mod">
-    <h2 class="title">{{ model.order_money }}</h2>
+    <h1>这是一个新开的页面</h1>
+    <h2 class="title">{{ model.name }}</h2>
   </div>
 
 </template>
@@ -18,9 +19,11 @@
     methods: {
       init: function () {
         var $vm = this;
-        var id = this.$route.params.id;  //接收参数
+        var uid = this.$route.params.uid;  //接收参数
         var params = {
-          coupon_id: id
+          uid: uid,
+          mid:16,
+          muid:5
         };
 //        this.$http.post('/api?g=Appapi&c=Coupon&a=coupon_info', params, {
 //          headers: {},
@@ -37,14 +40,14 @@
 
         ajax.post({
           obj: $vm,
-          url: "/api?g=Appapi&c=Coupon&a=coupon_info",
+          url: "/api/app/User/userModulepp",
           data: params,
           success: function (res) {
             console.log(res)
             $vm.model = res.data;
           },
           error: function (error) {
-            console.log(error)
+            alert(error.msg)
           }
         });
       }

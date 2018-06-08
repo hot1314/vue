@@ -7,12 +7,28 @@ import eventBus from './components/common/eventBus'
 
 Vue.config.productionTip = false;
 
+/*路由拦截*/
+router.beforeEach((to, from, next) => {
+  if (to.path === '/') {
+    next()
+  } else {
+    var loginInfo = JSON.parse(localStorage.getItem("loginInfo"));
+    if (!loginInfo) {
+      next({ path: '/' })
+    } else {
+      next()
+    }
+  }
+});
+
+/*请求拦截*/
 Vue.http.interceptors.push((request, next)=> {
   eventBus.$emit('toggleLoading', true);
   next((response => {
     eventBus.$emit('toggleLoading', false);
   }));
 });
+
 
 /* eslint-disable no-new */
 new Vue({
