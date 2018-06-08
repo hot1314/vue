@@ -2,7 +2,7 @@
 
     A Vue.js project
 
-    基于vue-cli的基础框架
+    基于vue-cli的基础框架，内含一个登录示例。
 
 ## 包含以下几个内容
 
