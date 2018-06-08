@@ -7,7 +7,7 @@
         <input type="text" placeholder="请输入用户名" v-model="username"/>
       </div>
       <div class="input">
-        <input type="text" placeholder="请输入密码" v-model="password"/>
+        <input type="password" placeholder="请输入密码" v-model="password"/>
       </div>
       <div class="submit" @click="loginAction">登录</div>
     </div>
@@ -20,8 +20,8 @@
     name: 'loginBox',
     data () {
       return {
-        username: "18379137131",
-        password: "5653575.qq",
+        username: "18350240545",
+        password: "123456",
         msg: '这是登录页'
       }
     },
