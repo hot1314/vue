@@ -9,20 +9,19 @@
 
 <script>
   import loading from './components/common/loading.vue';
-  import eventBus from './components/common/eventBus';
   export default {
     name: 'App',
     data(){
-      return { isShowLoading: false }
+      return {  }
+    },
+    computed:{
+      isShowLoading(){
+        var loadingShow = this.$store.state.loadingShow;
+        return  loadingShow;
+      }
     },
     components: {
       'v-loading': loading
-    },
-    created() {
-      var $vm = this;
-      eventBus.$on("toggleLoading",function(show){
-        $vm.isShowLoading = show;
-      })
     }
   }
 </script>
