@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Vuex from 'vuex'
+import eventBus from './components/common/eventBus'
 
 Vue.config.productionTip = false;
 
@@ -21,44 +21,11 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-Vue.use(Vuex);
-var store = new Vuex.Store({
-  state: {
-    newPageData:{},
-    loadingShow: false
-  },
-  mutations: {
-    setData:function(state, params){
-      state.newPageData = params;
-    }
-  },
-  actions: {
-    getData: function (context, $this) {
-      var params = {
-        uid: 19,
-        mid:16,
-        muid:5
-      };
-      $this.$http.post('/api/app/User/userModulepp', params, {
-        headers: {},
-        emulateJSON: true
-      }).then(function (response) {
-        // 响应成功回调
-        context.commit( 'setData', response.body.data );
-
-      }, function (response) {
-        // 响应错误回调
-        console.log(response)
-      });
-    }
-  }
-});
-
 /*请求拦截*/
 Vue.http.interceptors.push((request, next)=> {
-  store.state.loadingShow = true;
+  eventBus.$emit('toggleLoading', true);
   next((response => {
-    store.state.loadingShow = false;
+    eventBus.$emit('toggleLoading', false);
   }));
 });
 
@@ -67,11 +34,6 @@ Vue.http.interceptors.push((request, next)=> {
 new Vue({
   el: '#app',
   router,
-  store,
-  created(){
-    var _sel = this;
-    store.dispatch('getData',_sel);
-  },
   components: {App},
   template: '<App/>'
 })
