@@ -21,7 +21,7 @@
     methods: {
       clear: function () {
         localStorage.clear();
-        this.$router.push({name: 'login'})
+        this.$router.push({path: '/'})
       }
     }
   }
