@@ -19,7 +19,7 @@
     methods: {
       init: function () {
         var $vm = this;
-        var uid = this.$route.params.uid;  //接收参数
+        var uid = this.$route.query.uid;  //接收参数
         var params = {
           uid: uid,
           mid:16,

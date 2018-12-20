@@ -4,7 +4,7 @@
     <h2 class="title">欢迎您 {{ loginInfo.username }} ，登录成功</h2>
     <a href="#" @click="clear" class="btn">安全退出</a>
     <!--传参-->
-    <router-link :to="{ name: 'default', params: { uid: 19 }}">打开新页面</router-link>
+    <router-link :to="{ name: 'default', query: { uid: 19 }}">打开新页面</router-link>
   </div>
 </template>
 

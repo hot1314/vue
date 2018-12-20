@@ -20,7 +20,7 @@
     name: 'loginBox',
     data () {
       return {
-        username: "18350240545",
+        username: "13328752532",
         password: "123456",
         msg: '这是登录页'
       }
